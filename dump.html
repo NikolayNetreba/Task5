@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head><title>List Dump</title></head>
+<body>
+<hr>
+<h2 style="color: black;">[1]</h2>
+<pre style="font-size: 16px; font-family: monospace;">adding new elem with key [1]
+Capacity: 6
+Free: 2
+Head: 1
+Tail: 1</pre>
+<img src="dumps/graph_1.png">
+<hr>
+<h2 style="color: black;">[2]</h2>
+<pre style="font-size: 16px; font-family: monospace;">adding new elem with key [2]
+Capacity: 6
+Free: 3
+Head: 1
+Tail: 2</pre>
+<img src="dumps/graph_2.png">
+<hr>
+<h2 style="color: black;">[3]</h2>
+<pre style="font-size: 16px; font-family: monospace;">adding new elem with key [3]
+Capacity: 6
+Free: 4
+Head: 1
+Tail: 3</pre>
+<img src="dumps/graph_3.png">
+<hr>
+<h2 style="color: black;">[4]</h2>
+<pre style="font-size: 16px; font-family: monospace;">WARNING: Ignored operation. Invalid key [100] passed, list_size is [3]</pre>
+<h2 style="color: red;">ERROR CAUGHT: Invalid key [100]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>place_after</b>, line <b>340</b></p>
+<img src="dumps/graph_4.png">
+<hr>
+<h2 style="color: black;">[5]</h2>
+<pre style="font-size: 16px; font-family: monospace;">WARNING: Ignored operation. Invalid key [-5] passed, list_size is [3]</pre>
+<h2 style="color: red;">ERROR CAUGHT: Invalid key [-5]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>delete_elem</b>, line <b>283</b></p>
+<img src="dumps/graph_5.png">
+<hr>
+<h2 style="color: black;">[6]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 2: Out-of-bounds NEXT at node [1] (next = -1000)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [1]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>87</b></p>
+<img src="dumps/graph_6.png">
+<hr>
+<h2 style="color: black;">[7]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 3: Out-of-bounds PREV at node [2] (prev = 777)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [1]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>95</b></p>
+<img src="dumps/graph_7.png">
+<hr>
+<h2 style="color: black;">[8]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 4: Broken reciprocity NEXT (node [1].next = 3, but node [3].prev = 2)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [1]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>103</b></p>
+<img src="dumps/graph_8.png">
+<hr>
+<h2 style="color: black;">[9]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 5: Broken reciprocity PREV (node [3].prev = 1, but node [1].next = 2)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [2]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>111</b></p>
+<img src="dumps/graph_9.png">
+<hr>
+<h2 style="color: black;">[10]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 6: Lost node / Count mismatch (list_size = 3, actual nodes = 2)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Count mismatch (lost nodes)</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>123</b></p>
+<img src="dumps/graph_10.png">
+<hr>
+<h2 style="color: black;">[11]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 7: Loop attempt (caught by reciprocity check or LOOP_EXISTS)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [0]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>141</b></p>
+<img src="dumps/graph_11.png">
+<hr>
+<h2 style="color: black;">[12]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 8: Corrupted FREE pointer (free = 999)</pre>
+<h2 style="color: red;">ERROR CAUGHT: Free points out of bounds</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>154</b></p>
+<img src="dumps/graph_12.png">
+<hr>
+<h2 style="color: black;">[13]</h2>
+<pre style="font-size: 16px; font-family: monospace;">TEST 9: Corrupted NEXT inside FREE list at node [4]</pre>
+<h2 style="color: red;">ERROR CAUGHT: Broken 'next' [4]</h2>
+<p>Called from <b>./src/list.cpp</b>, function <b>main</b>, line <b>162</b></p>
+<img src="dumps/graph_13.png">
+</body>
+</html>

@@ -1,0 +1,28 @@
+digraph g{ 
+rankdir=LR; 
+node [shape=Mrecord; style=filled;];
+node0 [label = "{<prev> prev = 1 | { index = 0 | info = 0 } | <next> next = 2}"; fillcolor="#8b0000"; fontcolor="white"; color="#ff0000"; penwidth=3.0];
+node1 [label = "{<prev> prev = 0 | { index = 1 | info = 10 } | <next> next = 0}"; fillcolor="#F4C2C2"; fontcolor="black"; color="black"; penwidth=1.0];
+node2 [label = "{<prev> prev = 3 | { index = 2 | info = 20 } | <next> next = 3}"; fillcolor="#87CEEB"; fontcolor="black"; color="black"; penwidth=1.0];
+node3 [label = "{<prev> prev = 2 | { index = 3 | info = 30 } | <next> next = 2}"; fillcolor="#00ff7fff"; fontcolor="black"; color="black"; penwidth=1.0];
+node4 [label = "{<prev> prev = -1 | { index = 4 | info = -1 } | <next> next = 5}"; fillcolor="#FFF3B0"; fontcolor="black"; color="black"; penwidth=1.0];
+node5 [label = "{<prev> prev = -1 | { index = 5 | info = -1 } | <next> next = 6}"; fillcolor="#E9ECEF"; fontcolor="black"; color="black"; penwidth=1.0];
+node6 [label = "{<prev> prev = -1 | { index = 6 | info = -1 } | <next> next = 0}"; fillcolor="#E9ECEF"; fontcolor="black"; color="black"; penwidth=1.0];
+node0 -> node1 [style=invis, weight=100];
+node1 -> node2 [style=invis, weight=100];
+node2 -> node3 [style=invis, weight=100];
+node3 -> node4 [style=invis, weight=100];
+node4 -> node5 [style=invis, weight=100];
+node5 -> node6 [style=invis, weight=100];
+node0:next -> node2 [color="#e90a0a", penwidth=3.0, constraint=false];
+node1:next -> node0:prev [color="#10b542", dir="both", penwidth=2.0, constraint=false];
+node1:prev -> node0 [color="#e90a0a", penwidth=3.0, constraint=false];
+node2:next -> node3:prev [color="#10b542", dir="both", penwidth=2.0, constraint=false];
+node3:next -> node2:prev [color="#10b542", dir="both", penwidth=2.0, constraint=false];
+HEAD [shape=box, style="filled, rounded", fillcolor="#87CEEB", label="HEAD"];
+TAIL [shape=box, style="filled, rounded", fillcolor="#F4C2C2", label="TAIL"];
+FREE [shape=box, style="filled, rounded", fillcolor="#FFF3B0", label="FREE"];
+HEAD -> node2 [color=black];
+TAIL -> node1 [color=black];
+FREE -> node4 [color=black];
+}
