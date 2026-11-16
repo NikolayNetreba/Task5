@@ -1,3 +1,4 @@
 *.out
 *.dot
+*.o
 ./dumps/
